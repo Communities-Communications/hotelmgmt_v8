@@ -161,7 +161,8 @@ class hotel_restaurant_reservation(models.Model):
     _name = "hotel.restaurant.reservation"
     _description = "Includes Hotel Restaurant Reservation"
 
-    reservation_id = fields.Char('Reservation No', size=64, required=True, default=lambda obj: obj.env['ir.sequence'].get('hotel.restaurant.reservation'))
+    #reservation_id = fields.Char('Reservation No', size=64, required=True, default=lambda obj: obj.env['ir.sequence'].get('hotel.restaurant.reservation'))
+    reservation_id = fields.Char('Reservation No', size=64, required=True)
     room_no = fields.Many2one('hotel.room', string='Room No', size=64)
     start_date = fields.Datetime('Start Time', required=True)
     end_date = fields.Datetime('End Time', required=True)
@@ -170,6 +171,14 @@ class hotel_restaurant_reservation(models.Model):
     tableno = fields.Many2many('hotel.restaurant.tables',relation='reservation_table',column1='reservation_table_id',column2='name',string='Table Number',help="Table reservation detail. ")
     state = fields.Selection([('draft', 'Draft'), ('confirm', 'Confirmed'), ('done', 'Done'), ('cancel', 'Cancelled')], 'state', select=True, required=True, readonly=True,default=lambda * a: 'draft')
 
+    #new method for sequence
+    def create(self, cr, uid, vals, context=None):
+        if not vals:
+            vals = {}
+        if context is None:
+            context = {}
+        vals['reservation_id'] = self.pool.get('ir.sequence').get(cr, uid, 'hotel.restaurant.reservation')
+        return super(hotel_restaurant_reservation, self).create(cr, uid, vals, context=context)
 
     @api.constrains('start_date','end_date')
     def check_start_dates(self):
@@ -253,7 +262,8 @@ class hotel_restaurant_order(models.Model):
 
     _rec_name="order_no"
 
-    order_no = fields.Char('Order Number', size=64, required=True,default=lambda obj: obj.env['ir.sequence'].get('hotel.restaurant.order'))
+    #order_no = fields.Char('Order Number', size=64, required=True,default=lambda obj: obj.env['ir.sequence'].get('hotel.restaurant.order'))
+    order_no = fields.Char('Order Number', size=64, required=True)
     o_date = fields.Datetime('Date', required=True)
     room_no = fields.Many2one('hotel.room','Room No')
     waiter_name = fields.Many2one('res.partner','Waiter Name')
@@ -263,6 +273,14 @@ class hotel_restaurant_order(models.Model):
     amount_subtotal = fields.Float(compute=_sub_total, method=True, string='Subtotal')
     amount_total = fields.Float(compute=_total, method=True, string='Total')
 
+    #new method for sequence
+    def create(self, cr, uid, vals, context=None):
+        if not vals:
+            vals = {}
+        if context is None:
+            context = {}
+        vals['order_no'] = self.pool.get('ir.sequence').get(cr, uid, 'hotel.restaurant.order')
+        return super(hotel_restaurant_order, self).create(cr, uid, vals, context=context)
 
 class hotel_reservation_order(models.Model):
 
@@ -325,7 +343,8 @@ class hotel_reservation_order(models.Model):
 
     _rec_name="order_number"
 
-    order_number = fields.Char('Order No', size=64,default=lambda obj: obj.env['ir.sequence'].get('hotel.reservation.order'))
+    #order_number = fields.Char('Order No', size=64,default=lambda obj: obj.env['ir.sequence'].get('hotel.reservation.order'))
+    order_number = fields.Char('Order No', size=64, readonly=True)
     reservationno = fields.Char('Reservation No', size=64)
     date1 = fields.Datetime('Date', required=True)
     waitername = fields.Many2one('res.partner','Waiter Name')
@@ -335,6 +354,14 @@ class hotel_reservation_order(models.Model):
     amount_subtotal = fields.Float(compute='_sub_total', method=True, string='Subtotal')
     amount_total = fields.Float(compute='_total', method=True, string='Total')
 
+    #new method for sequence
+    def create(self, cr, uid, vals, context=None):
+        if not vals:
+            vals = {}
+        if context is None:
+            context = {}
+        vals['order_number'] = self.pool.get('ir.sequence').get(cr, uid, 'hotel.reservation.order')
+        return super(hotel_reservation_order, self).create(cr, uid, vals, context=context)
 
 class hotel_restaurant_order_list(models.Model):
 

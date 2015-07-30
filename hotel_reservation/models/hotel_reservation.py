@@ -42,7 +42,8 @@ class hotel_reservation(models.Model):
     _order = 'reservation_no desc'
     _inherit = ['mail.thread']
 
-    reservation_no = fields.Char('Reservation No', size=64,readonly=True, default=lambda obj: obj.env['ir.sequence'].get('hotel.reservation'))
+#    reservation_no = fields.Char('Reservation No', size=64,readonly=True, default=lambda obj: obj.env['ir.sequence'].get('hotel.reservation'))
+    reservation_no = fields.Char('Reservation No', size=64,readonly=True)
     date_order = fields.Datetime('Date Ordered', required=True, readonly=True, states={'draft':[('readonly', False)]},default=lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'))
     warehouse_id = fields.Many2one('stock.warehouse','Hotel', readonly=True, required=True, default = 1, states={'draft':[('readonly', False)]})
     partner_id = fields.Many2one('res.partner','Guest Name' ,readonly=True, required=True, states={'draft':[('readonly', False)]})
@@ -58,6 +59,15 @@ class hotel_reservation(models.Model):
     state = fields.Selection([('draft', 'Draft'), ('confirm', 'Confirm'), ('cancel', 'Cancel'), ('done', 'Done')], 'State', readonly=True,default=lambda *a: 'draft')
     folio_id = fields.Many2many('hotel.folio','hotel_folio_reservation_rel','order_id','invoice_id',string='Folio')
     dummy = fields.Datetime('Dummy')
+
+    #new method for sequence
+    def create(self, cr, uid, vals, context=None):
+        if not vals:
+            vals = {}
+        if context is None:
+            context = {}
+        vals['reservation_no'] = self.pool.get('ir.sequence').get(cr, uid, 'hotel.reservation')
+        return super(hotel_reservation, self).create(cr, uid, vals, context=context)
 
     @api.onchange('date_order','checkin')
     def on_change_checkin(self):
@@ -288,7 +298,6 @@ class hotel_reservation(models.Model):
                     duration += 1
         value.update({'duration':duration})
         return value
-
 
 class hotel_reservation_line(models.Model):
 
