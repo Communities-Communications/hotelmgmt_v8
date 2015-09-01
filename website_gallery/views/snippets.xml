@@ -1,0 +1,80 @@
+<openerp>
+  <data>
+
+	<template id="gallery_snippet_id" inherit_id="website.snippets" name="Clean Theme snippets">
+	    <xpath expr="//div[@id='snippet_structure']" position="inside">
+		<div>
+		<div class="oe_snippet_thumbnail">
+		    <img class="oe_snippet_thumbnail_img" src="/website_gallery/static/src/img/block_image_gallery.png" />
+		    <span class="oe_snippet_thumbnail_title">PrettyPhoto Gallery</span>
+		</div>
+	      <section class="s_image_gallery">
+		<div class="container">
+		  <div class="row gallery clearfix">
+		    <div class="col-md-12 text-center mt16 mb32">
+		      <h2>Nossas referências de clientes</h2>
+		      <h4 class="text-muted">Mais de 500 projetos de sucesso</h4>
+		    </div>
+		    <div class="col-md-3">
+		      <a href="/website_gallery/static/src/images/fullscreen/800_ARAN4385.jpg" rel="prettyPhoto[gallery2]">
+		        <img alt="Odoo CMS - Gallery sample" class="img img-responsive mb16 o_animate o_anim_zoom_in" src="/website_gallery/static/src/images/fullscreen/800_ARAN4385.jpg" style="animation-play-state: paused;"/>
+		      </a>
+		    </div>
+		    <div class="col-md-3">
+		      <a href="/website_gallery/static/src/images/fullscreen/800_ARAN4388.jpg" rel="prettyPhoto[gallery2]">
+		        <img alt="Odoo CMS - Gallery sample" class="img img-responsive mb16 o_animate" src="/website_gallery/static/src/images/fullscreen/800_ARAN4388.jpg" style="animation-play-state: paused;"/>
+		      </a>
+		    </div>
+		    <div class="col-md-3">
+		      <a href="/website_gallery/static/src/images/fullscreen/800_ARAN4364.jpg" rel="prettyPhoto[gallery2]">
+		        <img alt="Odoo CMS - Gallery sample" class="img img-responsive mb16 o_animate" src="/website_gallery/static/src/images/fullscreen/800_ARAN4364.jpg" style="animation-play-state: paused;"/>
+		      </a>
+		    </div>
+		    <div class="col-md-3 mb0">
+		      <a href="/website_gallery/static/src/images/fullscreen/800_ARAN4374.jpg" rel="prettyPhoto[gallery2]">
+		        <img alt="Odoo CMS - Gallery sample" class="img img-responsive mb16 o_animate" src="/website_gallery/static/src/images/fullscreen/800_ARAN4374.jpg" style="animation-play-state: paused;"/>
+		      </a>
+		    </div>
+		    <div class="col-md-3">
+		      <a href="/website_gallery/static/src/images/fullscreen/800_ARAN4370.jpg" rel="prettyPhoto[gallery2]">
+		        <img alt="Odoo CMS - Gallery sample" class="img img-responsive mb16 o_animate" src="/website_gallery/static/src/images/fullscreen/800_ARAN4370.jpg" style="animation-play-state: paused;"/>
+		      </a>
+		    </div>
+		    <div class="col-md-3">
+		      <a href="/website_gallery/static/src/images/fullscreen/800_ARAN4299.jpg" rel="prettyPhoto[gallery2]">
+		        <img alt="Odoo CMS - Gallery sample" class="img img-responsive mb16 o_animate" src="/website_gallery/static/src/images/fullscreen/800_ARAN4299.jpg" style="animation-play-state: paused;"/>
+		      </a>
+		    </div>
+		    <div class="col-md-3">
+		      <a href="/website_gallery/static/src/images/fullscreen/800_ARAN4380.jpg" rel="prettyPhoto[gallery2]">
+		        <img alt="Odoo CMS - Gallery sample" class="img img-responsive mb16 o_animate" src="/website_gallery/static/src/images/fullscreen/800_ARAN4380.jpg" style="animation-play-state: paused;"/>
+		      </a>
+		    </div>
+		    <div class="col-md-3">
+		      <a href="/website_gallery/static/src/images/fullscreen/800_ARAN4409.jpg" rel="prettyPhoto[gallery2]">
+		        <img alt="Odoo CMS - Gallery sample" class="img img-responsive mb16 o_animate" src="/website_gallery/static/src/images/fullscreen/800_ARAN4409.jpg" style="animation-play-state: paused;"/>
+		      </a>
+		    </div>
+		  </div>
+		</div>
+	      </section>
+		</div>
+	    </xpath>
+	</template>
+
+ <template id="layout_inherit" inherit_id="website.layout">
+    <xpath expr="//html/head" position="inside">
+		<!-- core CSS -->	
+        <link rel="stylesheet" href="/website_gallery/static/src/css/prettyPhoto.css" type="text/css"/>	
+    </xpath> 
+ </template>
+    
+<template id="profile_theme_asset" name="website assete for profile theme" inherit_id="website.theme">
+    <xpath expr="." position="inside">
+        <script type="text/javascript" src="/website_gallery/static/js/jquery.prettyPhoto.js"/>
+        <script type="text/javascript" src="/website_gallery/static/js/gallery.js"/>
+    </xpath>
+</template>
+
+  </data>
+</openerp>

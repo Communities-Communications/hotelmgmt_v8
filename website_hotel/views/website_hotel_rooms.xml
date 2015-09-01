@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="website.rooms" name="Rooms" page="True">
+    <t t-call="website.layout">
+      <div id="wrap">
+        <div class="oe_structure"/>
+            <section class="s_title o_animate bg-primary oe_img_bg" style="background-color: rgb(85, 75, 59); color: rgb(222, 184, 135); animation-play-state: paused;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-left">THE FARM</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="s_title o_animate oe_img_bg bg-info" style="animation-play-state: paused;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-left" style="color: rgb(85, 75, 59);">ROOMS</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="s_title" style="height: 128px; overflow: hidden;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 mt32 mb48">
+                            <h1 class="text-center">Tradition and modernity</h1>
+                            <h3 class="text-muted text-center"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+		      <section class="rooms mt50 mb48">
+			<div class="container">
+			  <div class="row">
+			    <div class="col-sm-4">
+			      <div class="room-thumb">
+				<img alt="room 1" class="img-responsive" src="/website_hotel/static/src/img/ARAN4334.jpg"/>
+				<div class="mask">
+				  <div class="main">
+				    <h5>Double bedroom</h5>
+				    <div class="price">€ 70 <span>a night</span></div>
+				  </div>
+				  <div class="content">
+				    <p><span>Tradition and modernity</span> Our rooms have been designed individually, with space, simplicity an comfort.</p>
+				    <div class="row">
+				      <div class="col-xs-6">
+				        <ul class="list-unstyled">
+				          <li><i class="bicon-flattv"/> Flat-screen TV</li>
+				          <li><i class="bicon-airconditioning"/> Air Conditioning</li>
+				          <li><i class="bicon-wifi"/> Free WiFi</li>
+				        </ul>
+				      </div>
+				      <div class="col-xs-6">
+				        <ul class="list-unstyled">
+				          <li><i class="bicon-coffee"/> Breakfast included</li>
+				          <li><i class="bicon-resort"/> Balcony with view</li>
+                                          <li><i class="bicon-parking"/>Free parking</li>
+				        </ul>
+				      </div>
+				    </div>
+				    <a class="btn btn-primary btn-block" href="/page/rooms-double">BOOK NOW</a>
+				  </div>
+				</div>
+			      </div>
+			    </div>
+			    <div class="col-sm-4">
+			      <div class="room-thumb">
+				<img alt="room 2" class="img-responsive" src="/website_hotel/static/src/img/ARAN4301.jpg"/>
+				<div class="mask">
+				  <div class="main">
+				    <h5>Twin Bedroom</h5>
+				    <div class="price">€ 70 <span>a night</span></div>
+				  </div>
+				  <div class="content">
+				    <p><span>Tradition and modernity</span> Our rooms have been designed individually, with space, simplicity an comfort.</p>
+				    <div class="row">
+				      <div class="col-xs-6">
+				        <ul class="list-unstyled">
+				          <li><i class="bicon-flattv"/> Flat-screen TV</li>
+				          <li><i class="bicon-airconditioning"/> Air Conditioning</li>
+				          <li><i class="bicon-wifi"/> Free WiFi</li>
+				        </ul>
+				      </div>
+				      <div class="col-xs-6">
+				        <ul class="list-unstyled">
+				          <li><i class="bicon-coffee"/> Breakfast included</li>
+				          <li><i class="bicon-resort"/> Balcony with view</li>
+                                          <li><i class="bicon-parking"/>Free parking</li>
+				        </ul>
+				      </div>
+				    </div>
+				    <a class="btn btn-primary btn-block" href="/page/rooms-twin">BOOK NOW</a>
+				  </div>
+				</div>
+			      </div>
+			    </div>
+			    <div class="col-sm-4">
+			      <div class="room-thumb">
+				<img alt="room 3" class="img-responsive" src="/website_hotel/static/src/img/ARAN4339.jpg"/>
+				<div class="mask">
+				  <div class="main">
+				    <h5>Single room</h5>
+				    <div class="price">€ 58 <span>a night</span></div>
+				  </div>
+				  <div class="content">
+				    <p><span>Tradition and modernity</span> Our rooms have been designed individually, with space, simplicity an comfort.</p>
+				    <div class="row">
+				      <div class="col-xs-6">
+				        <ul class="list-unstyled">
+				          <li><i class="bicon-flattv"/> Flat-screen TV</li>
+				          <li><i class="bicon-airconditioning"/> Air Conditioning</li>
+                                          <li><i class="bicon-parking"/>Free parking</li>
+				        </ul>
+				      </div>
+				      <div class="col-xs-6">
+				        <ul class="list-unstyled">
+				          <li><i class="bicon-coffee"/> Breakfast included</li>
+				          <li><i class="bicon-wifi"/> Free WiFi</li>
+				        </ul>
+				      </div>
+				    </div>
+				    <a class="btn btn-primary btn-block" href="/page/rooms-single">BOOK NOW</a>
+				  </div>
+				</div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		      </section>
+            <section class="s_image_text mt0" style="height: 240px; overflow: hidden;">
+                <div class="container">
+                    <div class="row">
+                        <div class="mt16 col-md-5">
+                            <h3>
+                                <em>In a harmonious merge of tradition and modernity, our rooms associate space and comfort in a rural environment with wiews of the fruit orchards and the cornfields of the farm.</em>
+                            </h3>
+                        </div>
+                        <div class="mt16 col-md-offset-1 col-md-6">
+                            <p>We offer an eclectic and modern style, preserving the connection between traditional and rural stuff. Our rooms have been designed individually, with space, simplicity an comfort. Here, guests can ennjoy the excelent quality of the beds, comfortable pillows, good illumination for reading, nice decoration. In bathrooms, there are showers with a lot of pressure and plenty of hot water and amenities. Every room has an individual air conditioning system and free wireless internet. Every window is opened to outside, with views to the property. Some of the rooms have a balcony with views of the gardens and the cornfield.</p>
+                            <p>Free parking.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <div class="oe_structure"/>
+      </div>
+    </t>
+</template>
+
+</data>
+</openerp>

@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="website.rooms-twin" name="Twin Rooms" page="True">
+    <t t-call="website.layout">
+      <div id="wrap">
+        <div class="oe_structure"/>
+       <section class="s_title o_animate bg-primary oe_img_bg" style="background-color: rgb(85, 75, 59); color: rgb(222, 184, 135); animation-play-state: paused;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-left">THE FARM</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s_title o_animate oe_img_bg bg-info" style="animation-play-state: paused;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-left" style="color: rgb(85, 75, 59);">ROOMS</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mb48 mt48" name="reservationcontent">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="carousel room-slide" data-ride="carousel" id="carousel-example-generic" style="height: 488px; overflow: hidden;">
+                    <ol class="carousel-indicators">
+                      <li class="active" data-slide-to="0" data-target="#carousel-example-generic"/>
+                      <li data-slide-to="1" data-target="#carousel-example-generic"/>
+                      <li data-slide-to="2" data-target="#carousel-example-generic"/>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <img alt="First slide" src="/website_hotel/static/src/img/ARAN4301.jpg" style="transition: none 0s ease 0s ;"/>
+                      </div>
+                      <div class="item">
+                        <img alt="Second slide" src="/website_hotel/static/src/img/ARAN4301.jpg" style=""/>
+                      </div>
+                      <div class="item">
+                        <img alt="Third slide" src="/website_hotel/static/src/img/ARAN4301.jpg" style="transition: none 0s ease 0s ;"/>
+                      </div>
+                    </div>
+                    <a class="left carousel-control" data-slide="prev" href="#carousel-example-generic">
+                      <span class="glyphicon glyphicon-chevron-left"/>
+                    </a>
+                    <a class="right carousel-control" data-slide="next" href="#carousel-example-generic">
+                      <span class="glyphicon glyphicon-chevron-right"> </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="push"/>
+          </div>
+          <div class="col-md-4 mb48 mt48" name="reservationform">
+            <section class="clearfix mt0" id="reservation-form">
+              <div class="wizard">
+                <!-- FORMULARIO DE RESERVA -->
+                <div class="wizard-inner">
+                  <div class="connecting-line"/>
+                  <ul style="display:none;" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                        <span class="round-tab">
+                          <i class="glyphicon glyphicon-folder-open"/>
+                        </span>
+                      </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                      <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Personal data">
+                        <span class="round-tab">
+                          <i class="glyphicon glyphicon-pencil"/>
+                        </span>
+                      </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                      <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Payment method">
+                        <span class="round-tab">
+                          <i class="glyphicon glyphicon-credit-card"/>
+                        </span>
+                      </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                      <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                        <span class="round-tab">
+                          <i class="glyphicon glyphicon-ok"/>
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+		        <form role="form" action="/hotel/reservations" method="post" class="reservation-vertical clearfix" name="reservationform" id="reservationform" enctype="multipart/form-data">
+		            <div class="tab-content" style="padding: 0px;">
+		                <div id="message"></div>
+		                <div class="tab-pane active" role="tabpanel" id="step1">
+		                    <h2 class="lined-heading">
+		                        <span>Reservation</span>
+		                    </h2>
+		                    <div class="price">
+		                        <h4>Twin bedroom</h4>70€
+		          
+		                                
+		                        <span> a night</span>
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="name">Room Type</label>
+		                        <select id="room-requirements" name="name" class="form-control" t-attf-value="#{name or ''}">
+		                            <option value="4"> Twin bedroom </option>
+		                        </select>
+		                    </div>
+		                    <span class="input-daterange" id="datepicker">
+		                        <div t-attf-class="form-group #{error and 'checkin' in error and 'has-error' or ''}">
+		                            <label for="checkin">Check-in</label>
+		                            <div class="popover-icon" data-container="body" data-content="Check-In is from 11:00" data-placement="right" data-toggle="popover" data-trigger="hover">
+		                                <i class="fa fa-info-circle fa-lg"/>
+		                            </div>
+		                            <i class="fa fa-calendar infield"/>
+		                            <input class="form-control" id="checkin" name="checkin" placeholder="Check-in" value="" type="text" required="True" t-attf-value="#{checkin or ''}"/>
+		                        </div>
+		                        <div t-attf-class="form-group #{error and 'checkout' in error and 'has-error' or ''}">
+		                            <label for="checkout">Check-out</label>
+		                            <div class="popover-icon" data-container="body" data-content="Check-out is from 12:00" data-placement="right" data-toggle="popover" data-trigger="hover">
+		                                <i class="fa fa-info-circle fa-lg"/>
+		                            </div>
+		                            <i class="fa fa-calendar infield"/>
+		                            <input class="form-control" id="checkout" name="checkout" placeholder="Check-out" value="" type="text" required="True" t-attf-value="#{checkout or ''}"/>
+		                        </div>
+		                    </span>
+		                    <div class="form-group">
+		                        <div class="guests-select">
+		                            <label>Guests</label>
+		                            <i class="fa fa-user infield"/>
+		                            <div class="total form-control" id="test">1</div>
+		                            <div class="guests">
+		                                <div class="form-group adults">
+		                                    <label for="adults">Adults</label>
+		                                    <div class="popover-icon" data-container="body" data-content="+18 years" data-placement="right" data-toggle="popover" data-trigger="hover">
+		                                        <i class="fa fa-info-circle fa-lg"/>
+		                                    </div>
+		                                    <select class="form-control" id="adults" name="adults">
+		                                        <option value="1">1 adult</option>
+		                                        <option value="2">2 adults</option>
+		                                        <option value="3">3 adults</option>
+		                                    </select>
+		                                </div>
+		                                <div class="form-group children">
+		                                    <label for="children">Children</label>
+		                                    <div class="popover-icon" data-container="body" data-content="0 till 18 years" data-placement="right" data-toggle="popover" data-trigger="hover">
+		                                        <i class="fa fa-info-circle fa-lg"/>
+		                                    </div>
+		                                    <select class="form-control" id="children" name="children">
+		                                        <option value="0">0 children</option>
+		                                        <option value="1">1 child</option>
+		                                        <option value="2">2 children</option>
+		                                        <option value="3">3 children</option>
+		                                    </select>
+		                                </div>
+		                                <button class="btn btn-default button-save btn-block" type="button">Save</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <button type="button" class="btn btn-primary btn-block next-step">BOOK NOW</button>
+		                </div>
+		                <div class="tab-pane" role="tabpanel" id="step2">
+		                    <h2 class="lined-heading">
+		                        <span>Personal data</span>
+		                    </h2>
+		                    <div t-attf-class="form-group #{error and 'contact_name' in error and 'has-error' or ''}">
+		                        <input type="text" class="form-control" name="contact_name" placeholder="Your Name" required="True" t-attf-value="#{contact_name or ''}"/>
+		                    </div>
+		                    <div t-attf-class="form-group #{error and 'email_from' in error and 'has-error' or ''}">
+		                        <input type="email" class="form-control" name="email_from" placeholder="Email" required="True" t-attf-value="#{email_from or ''}"/>
+		                    </div>
+		                    <div t-attf-class="form-group #{error and 'phone' in error and 'has-error' or ''}">
+		                        <input type="text" class="form-control" name="phone" placeholder="Phone Number (+351) 910 999 999" required="True" t-attf-value="#{phone or ''}"/>
+		                    </div>
+		                    <div class="form-group">
+		                        <input type="text" class="form-control" name="street" placeholder="Address" required="True" t-attf-value="#{street or ''}"/>
+		                    </div>
+		                    <div class="form-group">
+		                        <input type="text" class="form-control" name="zip" placeholder="Zip" required="True"/>
+		                    </div>
+		                    <div class="form-group">
+		                        <input type="text" class="form-control" name="city" placeholder="City" required="True" t-attf-value="#{city or ''}"/>
+		                    </div>
+		                    <div class="form-group">
+		                        <select id="country_id" name="country_id" class="form-control" required="True" t-attf-value="#{country_id or ''}">
+		                            <option value="">Choose your country</option>
+		                            <option value="1">Andorra, Principality of</option>
+		                            <option value="2">United Arab Emirates</option>
+		                            <option value="3">Afghanistan, Islamic State of</option>
+		                            <option value="4">Antigua and Barbuda</option>
+		                            <option value="5">Anguilla</option>
+		                            <option value="6">Albania</option>
+		                            <option value="7">Armenia</option>
+		                            <option value="8">Netherlands Antilles</option>
+		                            <option value="9">Angola</option>
+		                            <option value="10">Antarctica</option>
+		                            <option value="11">Argentina</option>
+		                            <option value="12">American Samoa</option>
+		                            <option value="13">Austria</option>
+		                            <option value="14">Australia</option>
+		                            <option value="15">Aruba</option>
+		                            <option value="16">Åland Islands</option>
+		                            <option value="17">Azerbaijan</option>
+		                            <option value="18">Bosnia-Herzegovina</option>
+		                            <option value="19">Barbados</option>
+		                            <option value="20">Bangladesh</option>
+		                            <option value="21">Belgium</option>
+		                            <option value="22">Burkina Faso</option>
+		                            <option value="23">Bulgaria</option>
+		                            <option value="24">Bahrain</option>
+		                            <option value="25">Burundi</option>
+		                            <option value="26">Benin</option>
+		                            <option value="27">Saint Barthélémy</option>
+		                            <option value="28">Bermuda</option>
+		                            <option value="29">Brunei Darussalam</option>
+		                            <option value="30">Bolivia</option>
+		                            <option value="31">Bonaire, Sint Eustatius and Saba</option>
+		                            <option value="32">Brazil</option>
+		                            <option value="50">Colombia</option>
+		                            <option value="111">Jersey</option>
+		                            <option value="160">Namibia</option>
+		                            <option value="33">Bahamas</option>
+		                            <option value="34">Bhutan</option>
+		                            <option value="35">Bouvet Island</option>
+		                            <option value="36">Botswana</option>
+		                            <option value="37">Belarus</option>
+		                            <option value="38">Belize</option>
+		                            <option value="39">Canada</option>
+		                            <option value="40">Cocos (Keeling) Islands</option>
+		                            <option value="41">Central African Republic</option>
+		                            <option value="42">Congo, Democratic Republic of the</option>
+		                            <option value="43">Congo</option>
+		                            <option value="44">Switzerland</option>
+		                            <option value="45">Ivory Coast (Cote D'Ivoire)</option>
+		                            <option value="46">Cook Islands</option>
+		                            <option value="47">Chile</option>
+		                            <option value="48">Cameroon</option>
+		                            <option value="49">China</option>
+		                            <option value="74">Micronesia</option>
+		                            <option value="155">Maldives</option>
+		                            <option value="156">Malawi</option>
+		                            <option value="51">Costa Rica</option>
+		                            <option value="52">Cuba</option>
+		                            <option value="53">Cape Verde</option>
+		                            <option value="54">Curaçao</option>
+		                            <option value="55">Christmas Island</option>
+		                            <option value="56">Cyprus</option>
+		                            <option value="57">Czech Republic</option>
+		                            <option value="58">Germany</option>
+		                            <option value="59">Djibouti</option>
+		                            <option value="60">Denmark</option>
+		                            <option value="61">Dominica</option>
+		                            <option value="62">Dominican Republic</option>
+		                            <option value="63">Algeria</option>
+		                            <option value="64">Ecuador</option>
+		                            <option value="65">Estonia</option>
+		                            <option value="66">Egypt</option>
+		                            <option value="67">Western Sahara</option>
+		                            <option value="68">Eritrea</option>
+		                            <option value="69">Spain</option>
+		                            <option value="70">Ethiopia</option>
+		                            <option value="71">Finland</option>
+		                            <option value="72">Fiji</option>
+		                            <option value="73">Falkland Islands</option>
+		                            <option value="75">Faroe Islands</option>
+		                            <option value="76">France</option>
+		                            <option value="77">Gabon</option>
+		                            <option value="78">Grenada</option>
+		                            <option value="79">Georgia</option>
+		                            <option value="80">French Guyana</option>
+		                            <option value="81">Ghana</option>
+		                            <option value="82">Gibraltar</option>
+		                            <option value="83">Guernsey</option>
+		                            <option value="84">Greenland</option>
+		                            <option value="85">Gambia</option>
+		                            <option value="86">Guinea</option>
+		                            <option value="87">Guadeloupe (French)</option>
+		                            <option value="88">Equatorial Guinea</option>
+		                            <option value="110">Italy</option>
+		                            <option value="89">Greece</option>
+		                            <option value="90">South Georgia and the South Sandwich Islands</option>
+		                            <option value="91">Guatemala</option>
+		                            <option value="92">Guam (USA)</option>
+		                            <option value="93">Guinea Bissau</option>
+		                            <option value="94">Guyana</option>
+		                            <option value="95">Hong Kong</option>
+		                            <option value="96">Heard and McDonald Islands</option>
+		                            <option value="97">Honduras</option>
+		                            <option value="98">Croatia</option>
+		                            <option value="99">Haiti</option>
+		                            <option value="100">Hungary</option>
+		                            <option value="101">Indonesia</option>
+		                            <option value="102">Ireland</option>
+		                            <option value="103">Israel</option>
+		                            <option value="104">Isle of Man</option>
+		                            <option value="105">India</option>
+		                            <option value="106">British Indian Ocean Territory</option>
+		                            <option value="107">Iraq</option>
+		                            <option value="108">Iran</option>
+		                            <option value="109">Iceland</option>
+		                            <option value="112">Jamaica</option>
+		                            <option value="113">Jordan</option>
+		                            <option value="114">Japan</option>
+		                            <option value="115">Kenya</option>
+		                            <option value="116">Kyrgyz Republic (Kyrgyzstan)</option>
+		                            <option value="117">Cambodia, Kingdom of</option>
+		                            <option value="118">Kiribati</option>
+		                            <option value="119">Comoros</option>
+		                            <option value="120">Saint Kitts &amp; Nevis Anguilla</option>
+		                            <option value="121">North Korea</option>
+		                            <option value="122">South Korea</option>
+		                            <option value="123">Kuwait</option>
+		                            <option value="124">Cayman Islands</option>
+		                            <option value="125">Kazakhstan</option>
+		                            <option value="126">Laos</option>
+		                            <option value="127">Lebanon</option>
+		                            <option value="128">Saint Lucia</option>
+		                            <option value="129">Liechtenstein</option>
+		                            <option value="130">Sri Lanka</option>
+		                            <option value="131">Liberia</option>
+		                            <option value="132">Lesotho</option>
+		                            <option value="133">Lithuania</option>
+		                            <option value="157">Mexico</option>
+		                            <option value="158">Malaysia</option>
+		                            <option value="159">Mozambique</option>
+		                            <option value="134">Luxembourg</option>
+		                            <option value="135">Latvia</option>
+		                            <option value="136">Libya</option>
+		                            <option value="137">Morocco</option>
+		                            <option value="138">Monaco</option>
+		                            <option value="139">Moldavia</option>
+		                            <option value="140">Montenegro</option>
+		                            <option value="141">Saint Martin (French part)</option>
+		                            <option value="142">Madagascar</option>
+		                            <option value="143">Marshall Islands</option>
+		                            <option value="144">Macedonia, the former Yugoslav Republic of</option>
+		                            <option value="145">Mali</option>
+		                            <option value="146">Myanmar</option>
+		                            <option value="147">Mongolia</option>
+		                            <option value="148">Macau</option>
+		                            <option value="149">Northern Mariana Islands</option>
+		                            <option value="150">Martinique (French)</option>
+		                            <option value="151">Mauritania</option>
+		                            <option value="152">Montserrat</option>
+		                            <option value="153">Malta</option>
+		                            <option value="154">Mauritius</option>
+		                            <option value="161">New Caledonia (French)</option>
+		                            <option value="162">Niger</option>
+		                            <option value="163">Norfolk Island</option>
+		                            <option value="164">Nigeria</option>
+		                            <option value="165">Nicaragua</option>
+		                            <option value="166">Netherlands</option>
+		                            <option value="167">Norway</option>
+		                            <option value="168">Nepal</option>
+		                            <option value="169">Nauru</option>
+		                            <option value="170">Neutral Zone</option>
+		                            <option value="171">Niue</option>
+		                            <option value="172">New Zealand</option>
+		                            <option value="173">Oman</option>
+		                            <option value="174">Panama</option>
+		                            <option value="175">Peru</option>
+		                            <option value="176">Polynesia (French)</option>
+		                            <option value="177">Papua New Guinea</option>
+		                            <option value="178">Philippines</option>
+		                            <option value="179">Pakistan</option>
+		                            <option value="180">Poland</option>
+		                            <option value="181">Saint Pierre and Miquelon</option>
+		                            <option value="182">Pitcairn Island</option>
+		                            <option value="183">Puerto Rico</option>
+		                            <option value="184">Palestinian Territory, Occupied</option>
+		                            <option value="185">Portugal</option>
+		                            <option value="186">Palau</option>
+		                            <option value="187">Paraguay</option>
+		                            <option value="188">Qatar</option>
+		                            <option value="189">Reunion (French)</option>
+		                            <option value="190">Romania</option>
+		                            <option value="191">Serbia</option>
+		                            <option value="192">Russian Federation</option>
+		                            <option value="193">Rwanda</option>
+		                            <option value="194">Saudi Arabia</option>
+		                            <option value="195">Solomon Islands</option>
+		                            <option value="196">Seychelles</option>
+		                            <option value="197">Sudan</option>
+		                            <option value="198">Sweden</option>
+		                            <option value="199">Singapore</option>
+		                            <option value="200">Saint Helena</option>
+		                            <option value="201">Slovenia</option>
+		                            <option value="202">Svalbard and Jan Mayen Islands</option>
+		                            <option value="203">Slovakia</option>
+		                            <option value="230">Tanzania</option>
+		                            <option value="204">Sierra Leone</option>
+		                            <option value="205">San Marino</option>
+		                            <option value="206">Senegal</option>
+		                            <option value="207">Somalia</option>
+		                            <option value="208">Suriname</option>
+		                            <option value="209">South Sudan</option>
+		                            <option value="210">Saint Tome (Sao Tome) and Principe</option>
+		                            <option value="211">El Salvador</option>
+		                            <option value="212">Sint Maarten (Dutch part)</option>
+		                            <option value="213">Syria</option>
+		                            <option value="214">Swaziland</option>
+		                            <option value="215">Turks and Caicos Islands</option>
+		                            <option value="216">Chad</option>
+		                            <option value="217">French Southern Territories</option>
+		                            <option value="218">Togo</option>
+		                            <option value="219">Thailand</option>
+		                            <option value="220">Tajikistan</option>
+		                            <option value="221">Tokelau</option>
+		                            <option value="222">Turkmenistan</option>
+		                            <option value="223">Tunisia</option>
+		                            <option value="224">Tonga</option>
+		                            <option value="225">East Timor</option>
+		                            <option value="226">Turkey</option>
+		                            <option value="227">Trinidad and Tobago</option>
+		                            <option value="228">Tuvalu</option>
+		                            <option value="229">Taiwan</option>
+		                            <option value="231">Ukraine</option>
+		                            <option value="232">Uganda</option>
+		                            <option value="233">United Kingdom</option>
+		                            <option value="234">USA Minor Outlying Islands</option>
+		                            <option value="235">United States</option>
+		                            <option value="236">Uruguay</option>
+		                            <option value="237">Uzbekistan</option>
+		                            <option value="238">Holy See (Vatican City State)</option>
+		                            <option value="239">Saint Vincent &amp; Grenadines</option>
+		                            <option value="240">Venezuela</option>
+		                            <option value="241">Virgin Islands (British)</option>
+		                            <option value="242">Virgin Islands (USA)</option>
+		                            <option value="243">Vietnam</option>
+		                            <option value="244">Vanuatu</option>
+		                            <option value="245">Wallis and Futuna Islands</option>
+		                            <option value="246">Samoa</option>
+		                            <option value="247">Yemen</option>
+		                            <option value="248">Mayotte</option>
+		                            <option value="249">Yugoslavia</option>
+		                            <option value="250">South Africa</option>
+		                            <option value="251">Zambia</option>
+		                            <option value="252">Zaire</option>
+		                            <option value="253">Zimbabwe</option>
+		                        </select>
+		                    </div>
+		                    <div class="form-group">
+		                        <input type="text" class="form-control" name="vat" placeholder="VAT Id Number (PT999999990)" required="True" t-attf-value="#{vat or ''}"/>
+		                    </div>
+		                    <span class="col-md-4" style="padding-left: 0px;">
+		                        <button type="button" class="btn btn-default btn-block prev-step">Previous</button>
+		                    </span>
+		                    <span class="col-md-8" style="padding-right: 0px;">
+		                        <button type="button" class="btn btn-primary btn-block next-step">Save and continue</button>
+		                    </span>
+		                </div>
+		                <div class="tab-pane" role="tabpanel" id="step3">
+		                    <h2 class="lined-heading">
+		                        <span>Payment method</span>
+		                    </h2>
+		                    <fieldset>
+		                        <div class="form-group">
+		                            <input type="text" class="form-control" name="cardname" id="card-holder-name" required="True" placeholder="Card Holder's Name"/>
+		                        </div>
+		                        <div class="form-group">
+		                            <input type="text" class="form-control" name="card-number" id="card-number" required="True" placeholder="Credit Card Number"/>
+		                        </div>
+		                        <div class="form-group">
+		                            <input type="text" class="form-control" name="cvv" id="cvv" required="True" placeholder="Security Code (CVV)"/>
+		                        </div>
+		                        <div class="form-group">
+		                            <label for="expiry-month">Expiration Date</label>
+		                            <div class="row">
+		                                <div class="col-xs-3 col-sm-6">
+		                                    <select class="form-control col-sm-2" name="expiry-month" required="True" id="expiry-month">
+		                                        <option>Month</option>
+		                                        <option value="01">Jan (01)</option>
+		                                        <option value="02">Feb (02)</option>
+		                                        <option value="03">Mar (03)</option>
+		                                        <option value="04">Apr (04)</option>
+		                                        <option value="05">May (05)</option>
+		                                        <option value="06">June (06)</option>
+		                                        <option value="07">July (07)</option>
+		                                        <option value="08">Aug (08)</option>
+		                                        <option value="09">Sep (09)</option>
+		                                        <option value="10">Oct (10)</option>
+		                                        <option value="11">Nov (11)</option>
+		                                        <option value="12">Dec (12)</option>
+		                                    </select>
+		                                </div>
+		                                <div class="col-xs-3 col-sm-6">
+		                                    <select class="form-control" name="expiry-year" required="True" >
+		                                        <option value="13">2013</option>
+		                                        <option value="14">2014</option>
+		                                        <option value="15">2015</option>
+		                                        <option value="16">2016</option>
+		                                        <option value="17">2017</option>
+		                                        <option value="18">2018</option>
+		                                        <option value="19">2019</option>
+		                                        <option value="20">2020</option>
+		                                        <option value="21">2021</option>
+		                                        <option value="22">2022</option>
+		                                        <option value="23">2023</option>
+		                                    </select>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </fieldset>
+		                    <label>
+		                        <input class="terms-checkbox" type="checkbox"/> I understand and agree with the 
+		                                    
+		                                    
+		                        <a class="js-terms-message" data-toggle="modal" href="#primary" required="True">terms and conditions</a>
+		                    </label>
+		                    <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade text-left" id="primary" role="dialog" tabindex="-1">
+		                        <div class="modal-dialog">
+		                            <div class="modal-content">
+		                                <div class="modal-header modal-header-primary">
+		                                    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+		                                    <h1>
+		                                        <i class="fa fa-thumbs-o-up"/> Terms and conditions
+		                                                
+		                                                
+		                                    </h1>
+		                                </div>
+		                                <div class="modal-body text-muted">
+		                                    <p>To confirm your reservation, Hotel requires the name, number, date and security code of a credit card at time of the reservation or a deposit of 50% full reservation, IBAN: PT00 000000000000000000000, Swift: MMMMMMMM. To make your deposit you have 48 hours, otherwise the system does not consider your reservation valid. Hotel reserves the right to pre-authorize credit card to guarantee reservations. Hotel reserves the right to not accept checks as a payment mode.</p>
+		                                    <p>Reservations cancelled 7 or more days in advance are not subject to a penalty. Cancellations with less than 7 days are subject to a penalty of 50% of the total booking. No-show has a penalty of the total booking. There may be additional taxes and charges that apply.
+		    If you provide a credit card on the reservation, the room will be reserved until check-out time the day following of your arrival. For all other reservations, rooms are reserved until the cancellation of time specified in the reservation.
+		    If more guests than those reported at reservation time are found in the rooms Hotel reserves the right to request that customers check-out immediately.</p>
+		                                    <p>Any change to this reserve because of inadequate type of accommodation chosen for the number of people, will be subject to availability. The client will always be advised in advance if any supplement is associated with the change of the accommodation, and the hotel will consider its acceptance if not contacted until check-in time.</p>
+		                                    <p>Rates are subject to change at any time.</p>
+		                                </div>
+		                                <div class="modal-footer">
+		                                    <button class="btn btn-default pull-left" data-dismiss="modal" type="button">Close</button>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <p/>
+		                    <span class="col-md-4" style="padding-left: 0px;">
+		                        <button type="button" class="btn btn-default btn-block prev-step">Previous</button>
+		                    </span>
+		                    <span class="col-md-8" style="padding-right: 0px;">
+		                        <button type="button" class="btn btn-primary btn-block next-step">Save and continue</button>
+		                    </span>
+		                </div>
+		                <div class="tab-pane" role="tabpanel" id="complete">
+		                    <h2 class="lined-heading">
+		                        <span>Confirmation</span>
+		                    </h2>
+		                    <h3>Complete</h3>
+		                    <p>You have successfully completed all steps.</p>
+		                    <div class="form-group">
+		                        <label for="description">Special requirements</label>
+		                        <textarea class="form-control" name="description" placeholder="Extra Bed, Baby Cot, Reservation at Restaurant, Special Date" style="min-height: 80px"/>
+		                    </div>
+		                    <span class="col-md-4" style="padding-left: 0px;">
+		                        <button type="button" class="btn btn-default btn-block prev-step">Previous</button>
+		                    </span>
+		                    <span class="col-md-8" style="padding-right: 0px;">
+		                        <div class="form-group">
+		                            <div>
+		                                <button class="btn btn-primary btn-block">Confirm</button>
+		                            </div>
+		                        </div>
+		                    </span>
+		                </div>
+		                <div class="clearfix"/></div>
+		        </form>
+		      </div>
+		    </section>
+		  </div>
+		</div>
+	      </div>
+        <div class="oe_structure"/>
+      </div>
+    </t>
+</template>
+
+</data>
+</openerp>

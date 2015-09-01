@@ -46,7 +46,7 @@ class hotel_reservation(models.Model):
     reservation_no = fields.Char('Reservation No', size=64,readonly=True)
     date_order = fields.Datetime('Date Ordered', required=True, readonly=True, states={'draft':[('readonly', False)]},default=lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'))
     warehouse_id = fields.Many2one('stock.warehouse','Hotel', readonly=True, required=True, default = 1, states={'draft':[('readonly', False)]})
-    partner_id = fields.Many2one('res.partner','Guest Name' ,readonly=True, required=True, states={'draft':[('readonly', False)]})
+    partner_id = fields.Many2one('res.partner','Guest Name' ,readonly=True, required=False, states={'draft':[('readonly', False)]})
     pricelist_id = fields.Many2one('product.pricelist','Scheme' ,required=True, readonly=True, states={'draft':[('readonly', False)]}, help="Pricelist for current reservation. ")
     partner_invoice_id = fields.Many2one('res.partner','Invoice Address' ,readonly=True, states={'draft':[('readonly', False)]}, help="Invoice address for current reservation. ")
     partner_order_id = fields.Many2one('res.partner','Ordering Contact',readonly=True, states={'draft':[('readonly', False)]}, help="The name and address of the contact that requested the order or quotation.")
@@ -59,6 +59,26 @@ class hotel_reservation(models.Model):
     state = fields.Selection([('draft', 'Draft'), ('confirm', 'Confirm'), ('cancel', 'Cancel'), ('done', 'Done')], 'State', readonly=True,default=lambda *a: 'draft')
     folio_id = fields.Many2many('hotel.folio','hotel_folio_reservation_rel','order_id','invoice_id',string='Folio')
     dummy = fields.Datetime('Dummy')
+
+    # Fields for address, due to separation from hotel.reservation and res.partner
+    #name = fields.Char('Category', size=64)
+    name = fields.Many2one('product.category','Room Type' ,domain="[('isroomtype','=',True)]", change_default=True)
+    contact_name = fields.Char('Contact Name', size=64)
+    email_from = fields.Char('Email', size=128, help="Email address of the contact", select=1)
+    phone = fields.Char('Phone')
+    vat = fields.Char('NIF')
+    street = fields.Char('Street')
+    zip = fields.Char('Zip', change_default=True, size=24)
+    city = fields.Char('City')
+    country_id = fields.Many2one('res.country', 'Country')
+    description = fields.Text('Notes')
+#    banktransfer = fields.Boolean('Bank transfer')
+#    creditcard = fields.Boolean('Credit card')
+
+
+    _defaults = {
+        'pricelist_id': 1,
+        }
 
     #new method for sequence
     def create(self, cr, uid, vals, context=None):

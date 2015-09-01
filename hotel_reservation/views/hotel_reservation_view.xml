@@ -27,9 +27,12 @@
                                 <field name="date_order" select="1"/>
                                 <field name="warehouse_id" select="1"/>
                             </group>
+
                             <separator/>
                             <group colspan="4" col="4">
-                                <field name="partner_id" select="1" domain="[('customer','=',True)]"/>
+                                <!--field name="partner_id" select="1" domain="[('customer','=',True)]"/-->
+                                <!-- Preload all the partner's information -->
+                                <field name="partner_id" string="Customer" onchange="on_change_partner_id(partner_id)" options="{&quot;create_name_field&quot;: &quot;name&quot;}" context="{'default_name': contact_name, 'default_street': street, 'default_city': city, 'default_zip': zip, 'default_country_id': country_id, 'default_phone': phone,'default_email': email_from}" select="1" domain="[('customer','=',True)]"/>
                                 <field name="pricelist_id" col="2"/>
                                 <field name="partner_order_id" domain="[('parent_id','=',partner_id)]"/><newline/>
                                 <field name="partner_invoice_id" domain="[('parent_id','=',partner_id)]"/>
@@ -44,6 +47,25 @@
                                <field name="dummy" invisible="True"/>
                         </group>
                         <notebook>
+                            <page string='Dados de Contacto'>
+
+                            <group colspan="4" col="4">
+                            <field name="name" placeholder="....."/>
+                            <field name="contact_name" class="oe_inline"/>
+                            <field name="email_from" widget="email"/>
+                            <field name="phone"/>
+                            </group>
+                            <separator/>
+                            <group colspan="4" col="4">
+                            <field name="street"/>
+                            <field name="zip"/>
+                            <field name="city"/>
+                            <field name="country_id"/>
+                            <field name="vat"/>
+                            <field name="description"/>
+                            </group>
+
+                            </page>
                             <page string='Reservation Line'>
                                 <field name="reservation_line" colspan="4" nolabel="1" >
                                     <form string="Reservation Line">
