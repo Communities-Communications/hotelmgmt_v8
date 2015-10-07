@@ -51,6 +51,8 @@ header, .navbar-nav .dropdown-menu, .blog-author img, .comment .avatar img, asid
 -------------------------------------------------- */
 .btn-default {
 	color: #75c5cf;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
 	color: #75c5cf;
@@ -59,6 +61,8 @@ header, .navbar-nav .dropdown-menu, .blog-author img, .comment .avatar img, asid
 	background-color: #75c5cf;
 	border-color: #35929e;
 	text-shadow: 0 -1px 0 #50878e;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
 	background-color: #64cedb;

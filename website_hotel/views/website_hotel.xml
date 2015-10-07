@@ -6,6 +6,24 @@
     <t t-call="website.layout">
       <div id="wrap">
         <div class="oe_structure"/>
+	      <section class="s_title o_animate bg-primary oe_img_bg" style="background-color: rgb(85, 75, 59); color: rgb(222, 184, 135); animation-play-state: paused;">
+		<div class="container">
+		  <div class="row">
+		    <div class="col-md-12">
+		      <h1 class="text-left">RESERVAS</h1>
+		    </div>
+		  </div>
+		</div>
+	      </section>
+	      <section class="s_title o_animate oe_img_bg bg-info" style="animation-play-state: paused;">
+		<div class="container">
+		  <div class="row">
+		    <div class="col-md-12">
+		      <h1 class="text-left" style="color: rgb(85, 75, 59);">...</h1>
+		    </div>
+		  </div>
+		</div>
+	      </section>
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 mt48 mb48" name="reservationcontent">
@@ -26,7 +44,7 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-md-5 mt0">
-                      <img alt="Odoo image and text block" class="img img-responsive mb16 o_animate" src="/website/image/ir.attachment/179_e1c6fb6/datas" style="animation-play-state: paused;"/>
+                      <img alt="Odoo image and text block" class="img img-responsive mb16 o_animate" src="/website_hotel/static/src/img/ARAN4334.jpg" style="animation-play-state: paused;"/>
                     </div>
                     <div class="col-md-7 mt0">
                       <div class="room-thumb-h">
@@ -36,7 +54,7 @@
                         </div>
                         <div class="content">
                           <p><span>Tradition and modernity</span> Our rooms have been designed individually, with space, simplicity an comfort.</p>
-                          <a class="btn btn-primary btn-block" href="/page/rooms-double">BOOK NOW</a>
+                          <a class="btn btn-primary btn-block" href="/page/rooms-double">READ MORE</a>
                         </div>
                       </div>
                     </div>
@@ -47,7 +65,7 @@
                 <div class="container">
                   <div class="row">
                     <div class="mt16 col-md-5">
-                      <img alt="Odoo image and text block" class="img img-responsive mb16 o_animate" src="/website/image/ir.attachment/176_3ad7374/datas" style="transition: none 0s ease 0s ; animation-play-state: paused;"/>
+                      <img alt="Odoo image and text block" class="img img-responsive mb16 o_animate" src="/website_hotel/static/src/img/ARAN4301.jpg" style="transition: none 0s ease 0s ; animation-play-state: paused;"/>
                     </div>
                     <div class="mt16 col-md-7">
                       <div class="room-thumb-h">
@@ -57,7 +75,7 @@
                         </div>
                         <div class="content">
                           <p><span>Tradition and modernity</span> Our rooms have been designed individually, with space, simplicity an comfort.</p>
-                          <a class="btn btn-primary btn-block" href="/page/rooms-twin">BOOK NOW</a>
+                          <a class="btn btn-primary btn-block" href="/page/rooms-twin">READ MORE</a>
                         </div>
                       </div>
                     </div>
@@ -68,7 +86,7 @@
                 <div class="container">
                   <div class="row">
                     <div class="mt16 col-md-5">
-                      <img alt="Odoo image and text block" class="img img-responsive mb16 o_animate" src="/website/image/ir.attachment/177_30b75c5/datas" style="transition: none 0s ease 0s ; animation-play-state: paused;"/>
+                      <img alt="Odoo image and text block" class="img img-responsive mb16 o_animate" src="/website_hotel/static/src/img/ARAN4339.jpg" style="transition: none 0s ease 0s ; animation-play-state: paused;"/>
                     </div>
                     <div class="mt16 col-md-7">
                       <div class="room-thumb-h">
@@ -78,7 +96,7 @@
                         </div>
                         <div class="content">
                           <p><span>Tradition and modernity</span> Our rooms have been designed individually, with space, simplicity an comfort.</p>
-                          <a class="btn btn-primary btn-block" href="/page/rooms-single">BOOK NOW</a>
+                          <a class="btn btn-primary btn-block" href="/page/rooms-single">READ MORE</a>
                         </div>
                       </div>
                     </div>
@@ -127,78 +145,39 @@
                         </li>
                     </ul>
                 </div>
-                <form role="form" action="/hotel/reservations" method="post" class="reservation-vertical clearfix" name="reservationform" id="reservationform" enctype="multipart/form-data">
+		<form role="form" action="/hotel/reservations" onsubmit="return validateForm()" method="post" class="reservation-vertical clearfix" name="reservationform" id="reservationform" enctype="multipart/form-data">
                     <div class="tab-content" style="padding: 0px;">
-                        <div id="message"></div>
+                        <div id="message"/>
                         <div class="tab-pane active" role="tabpanel" id="step1">
                             <h2 class="lined-heading">
-                                <span>Reservation</span>
+                                <span>Reservation summary</span>
                             </h2>
                             <div class="price">
                                 <h4>Double Room</h4>70€
-                  
-                                        
                                 <span> a night</span>
                             </div>
-                            <div class="form-group">
-                                <label for="name">Room Type</label>
-                                <select id="room-requirements" name="name" class="form-control" t-attf-value="#{name or ''}">
-                                    <option value="3"> Double bedroom </option>
-                                    <option value="4"> Twin bedroom </option>
-                                    <option value="5"> Single room </option>
-                                </select>
+                            
+                            <div class="form-group col-md-12">
+                            <label class="col-md-5" for="checkin">Check-in</label>
+                            <input class="form-summary col-md-7" id="checkin" name="checkin" type="text" t-attf-value="#{checkin or ''}"/>
                             </div>
-                            <span class="input-daterange" id="datepicker">
-                                <div t-attf-class="form-group #{error and 'checkin' in error and 'has-error' or ''}">
-                                    <label for="checkin">Check-in</label>
-                                    <div class="popover-icon" data-container="body" data-content="Check-In is from 11:00" data-placement="right" data-toggle="popover" data-trigger="hover">
-                                        <i class="fa fa-info-circle fa-lg"/>
-                                    </div>
-                                    <i class="fa fa-calendar infield"/>
-                                    <input class="form-control" id="checkin" name="checkin" placeholder="Check-in" value="" type="text" required="True" t-attf-value="#{checkin or ''}"/>
-                                </div>
-                                <div t-attf-class="form-group #{error and 'checkout' in error and 'has-error' or ''}">
-                                    <label for="checkout">Check-out</label>
-                                    <div class="popover-icon" data-container="body" data-content="Check-out is from 12:00" data-placement="right" data-toggle="popover" data-trigger="hover">
-                                        <i class="fa fa-info-circle fa-lg"/>
-                                    </div>
-                                    <i class="fa fa-calendar infield"/>
-                                    <input class="form-control" id="checkout" name="checkout" placeholder="Check-out" value="" type="text" required="True" t-attf-value="#{checkout or ''}"/>
-                                </div>
-                            </span>
-                            <div class="form-group">
-                                <div class="guests-select">
-                                    <label>Guests</label>
-                                    <i class="fa fa-user infield"/>
-                                    <div class="total form-control" id="test">1</div>
-                                    <div class="guests">
-                                        <div class="form-group adults">
-                                            <label for="adults">Adults</label>
-                                            <div class="popover-icon" data-container="body" data-content="+18 years" data-placement="right" data-toggle="popover" data-trigger="hover">
-                                                <i class="fa fa-info-circle fa-lg"/>
-                                            </div>
-                                            <select class="form-control" id="adults" name="adults">
-                                                <option value="1">1 adult</option>
-                                                <option value="2">2 adults</option>
-                                                <option value="3">3 adults</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group children">
-                                            <label for="children">Children</label>
-                                            <div class="popover-icon" data-container="body" data-content="0 till 18 years" data-placement="right" data-toggle="popover" data-trigger="hover">
-                                                <i class="fa fa-info-circle fa-lg"/>
-                                            </div>
-                                            <select class="form-control" id="children" name="children">
-                                                <option value="0">0 children</option>
-                                                <option value="1">1 child</option>
-                                                <option value="2">2 children</option>
-                                                <option value="3">3 children</option>
-                                            </select>
-                                        </div>
-                                        <button class="btn btn-default button-save btn-block" type="button">Save</button>
-                                    </div>
-                                </div>
+                            <div class="form-group col-md-12">
+                            <label class="col-md-5" for="checkin">Check-out</label>
+                            <input class="form-summary col-md-7" id="checkout" name="checkout" type="text" t-attf-value="#{checkout or ''}"/>
                             </div>
+                            <div class="form-group col-md-12">
+                            <label class="col-md-5" for="checkin">Room Type</label>
+                            <input class="form-summary col-md-7" id="name" name="name" type="text" t-attf-value="#{name or ''}"/>
+                            </div>
+                            <div class="form-group col-md-12">
+                            <label class="col-md-5" for="checkin">Adults</label>
+                            <input class="form-summary col-md-7" id="adults" name="adults" type="text" t-attf-value="#{adults or ''}"/>
+                            </div>
+                            <div class="form-group col-md-12">
+                            <label class="col-md-5" for="checkin">Children</label>
+                            <input class="form-summary col-md-7" id="children" name="children" type="text" t-attf-value="#{children or ''}"/>
+                            </div>                             
+                            
                             <button type="button" class="btn btn-primary btn-block next-step">BOOK NOW</button>
                         </div>
                         <div class="tab-pane" role="tabpanel" id="step2">
@@ -206,25 +185,23 @@
                                 <span>Personal data</span>
                             </h2>
                             <div t-attf-class="form-group #{error and 'contact_name' in error and 'has-error' or ''}">
-                                <input type="text" class="form-control" name="contact_name" placeholder="Your Name" required="True" t-attf-value="#{contact_name or ''}"/>
+                                <input type="text" class="form-control" id="contact_name" name="contact_name" placeholder="Your Name" t-attf-value="#{contact_name or ''}"/>
                             </div>
                             <div t-attf-class="form-group #{error and 'email_from' in error and 'has-error' or ''}">
-                                <input type="email" class="form-control" name="email_from" placeholder="Email" required="True" t-attf-value="#{email_from or ''}"/>
+                                <input type="email" class="form-control" id="email_from" name="email_from" placeholder="Email" t-attf-value="#{email_from or ''}"/>
                             </div>
                             <div t-attf-class="form-group #{error and 'phone' in error and 'has-error' or ''}">
-                                <input type="text" class="form-control" name="phone" placeholder="Phone Number (+351) 910 999 999" required="True" t-attf-value="#{phone or ''}"/>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number (+351) 910 999 999" t-attf-value="#{phone or ''}"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="street" placeholder="Address" required="True" t-attf-value="#{street or ''}"/>
+                                <input type="text" class="form-control" id="street" name="street" placeholder="Address" t-attf-value="#{street or ''}"/>
                             </div>
+		            <div class="form-group">
+		                <input type="text" class="form-control" style="width:33%; display:inline;" id="zip" name="zip" placeholder="Zip"/>
+		                <input type="text" class="form-control" style="width:65%; display:inline;" id="city" name="city" placeholder="City" t-attf-value="#{city or ''}"/>
+		            </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="zip" placeholder="Zip" required="True"/>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="city" placeholder="City" required="True" t-attf-value="#{city or ''}"/>
-                            </div>
-                            <div class="form-group">
-                                <select id="country_id" name="country_id" class="form-control" required="True" t-attf-value="#{country_id or ''}">
+                                <select id="country_id" name="country_id" class="form-control" t-attf-value="#{country_id or ''}">
                                     <option value="">Choose your country</option>
                                     <option value="1">Andorra, Principality of</option>
                                     <option value="2">United Arab Emirates</option>
@@ -482,7 +459,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="vat" placeholder="VAT Id Number (PT999999990)" required="True" t-attf-value="#{vat or ''}"/>
+                                <input type="text" class="form-control" id="vat" name="vat" placeholder="VAT Id Number (PT999999990)" t-attf-value="#{vat or ''}"/>
                             </div>
                             <span class="col-md-4" style="padding-left: 0px;">
                                 <button type="button" class="btn btn-default btn-block prev-step">Previous</button>
@@ -497,19 +474,19 @@
                             </h2>
                             <fieldset>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="cardname" id="card-holder-name" required="True" placeholder="Card Holder's Name"/>
+                                    <input type="text" class="form-control" name="cardname" id="cardname" placeholder="Card Holder's Name"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="card-number" id="card-number" required="True" placeholder="Credit Card Number"/>
+                                    <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Credit Card Number"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="cvv" id="cvv" required="True" placeholder="Security Code (CVV)"/>
+                                    <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code (CVV)"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="expiry-month">Expiration Date</label>
                                     <div class="row">
                                         <div class="col-xs-3 col-sm-6">
-                                            <select class="form-control col-sm-2" name="expiry-month" required="True" id="expiry-month">
+                                            <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
                                                 <option>Month</option>
                                                 <option value="01">Jan (01)</option>
                                                 <option value="02">Feb (02)</option>
@@ -526,9 +503,7 @@
                                             </select>
                                         </div>
                                         <div class="col-xs-3 col-sm-6">
-                                            <select class="form-control" name="expiry-year" required="True" >
-                                                <option value="13">2013</option>
-                                                <option value="14">2014</option>
+                                            <select class="form-control" name="expiry-year" id="expiry-year">
                                                 <option value="15">2015</option>
                                                 <option value="16">2016</option>
                                                 <option value="17">2017</option>
@@ -544,10 +519,10 @@
                                 </div>
                             </fieldset>
                             <label>
-                                <input class="terms-checkbox" type="checkbox"/> I understand and agree with the 
+                                <input class="terms-checkbox" id="terms" type="checkbox"/> I understand and agree with the 
                                             
                                             
-                                <a class="js-terms-message" data-toggle="modal" href="#primary" required="True">terms and conditions</a>
+                                <a class="js-terms-message" data-toggle="modal" href="#primary">terms and conditions</a>
                             </label>
                             <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade text-left" id="primary" role="dialog" tabindex="-1">
                                 <div class="modal-dialog">
@@ -675,6 +650,12 @@
     <xpath expr="." position="inside">
         <script type="text/javascript" src="/website_hotel/static/src/js/custom_reservation.js"/>
         <script type="text/javascript" src="/website_hotel/static/src/js/tabs_reservation.js"/>
+    </xpath>
+</template>
+
+<template id="creditCardValidator" name="credit Card Validator" inherit_id="reservations_form">
+    <xpath expr="." position="inside">
+        <script type="text/javascript" src="/website_hotel/static/src/js/jquery.creditCardValidator.js"/>
     </xpath>
 </template>
 

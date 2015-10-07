@@ -36,7 +36,7 @@ class reservations(http.Controller):
     @http.route(['/page/website.reservations', '/page/reservations'], type='http', auth="public", website=True)
     def contact(self, **kwargs):
         values = {}
-        for field in ['checkin', 'checkout', 'reservation_line', 'adults', 'children', 'contact_name', 'email_from', 'phone', 'street', 'zip', 'city', 'country_id', 'vat', 'description']:
+        for field in ['checkin', 'checkout', 'reservation_line', 'adults', 'children', 'contact_name', 'name', 'email_from', 'phone', 'street', 'zip', 'city', 'country_id', 'vat', 'description']:
             if kwargs.get(field):
                 values[field] = kwargs.pop(field)
         values.update(kwargs=kwargs.items())

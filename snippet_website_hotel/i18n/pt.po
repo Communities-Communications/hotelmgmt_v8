@@ -1,0 +1,487 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* snippet_website_hotel
+# João Figueira <jjnf@communities.pt>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-01 14:47+0000\n"
+"PO-Revision-Date: 2015-09-01 16:30+0100\n"
+"Last-Translator: João Figueira <jjnf@communities.pt>\n"
+"Language-Team: Português <cc@communities.pt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "0 children"
+msgstr "0 crianças"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "1 adult"
+msgstr "1 adulto"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "1 child"
+msgstr "1 criança"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "2 adults"
+msgstr "2 adultos"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "2 children"
+msgstr "2 crianças"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "3 adults"
+msgstr "3 adultos"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "3 children"
+msgstr "3 crianças"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Adults"
+msgstr "Adultos"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Air Conditioning"
+msgstr "Ar Condicionado"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "BOOK NOW"
+msgstr "RESERVAR"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Balcony with view"
+msgstr "Varanda com vista"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Breakfast included"
+msgstr "Pequeno-almoço incluído"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Check-in"
+msgstr "Check-in"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Check-out"
+msgstr "Check-out"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Children"
+msgstr "Crianças"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Deluxe room"
+msgstr "Deluxe room"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Double Room"
+msgstr "Quarto Duplo"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Double bedroom"
+msgstr "Quarto Duplo"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "E-mail"
+msgstr "E-mail"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Extra"
+msgstr "Extra"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Facilities"
+msgstr "Facilities"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Flat-screen TV"
+msgstr "Televisão de Ecrã Plano"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Free WiFi"
+msgstr "Wi-Fi gratuito"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Free parking"
+msgstr "Estacionamento gratuito "
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Guests"
+msgstr "Hospedes"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Hotel Reservation Horizontal Form"
+msgstr "Hotel Reservation Horizontal Form"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Hotel Rooms"
+msgstr "Hotel Rooms"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid ""
+"In a harmonious merge of tradition and modernity, our rooms associate space "
+"and comfort in a rural environment with wiews of the fruit orchards and the "
+"cornfields of the farm."
+msgstr ""
+"In a harmonious merge of tradition and modernity, our rooms associate space "
+"and comfort in a rural environment with wiews of the fruit orchards and the "
+"cornfields of the farm."
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid ""
+"In bathrooms, there are showers with a lot of pressure and plenty of hot "
+"water and amenities. Every room has an individual air conditioning system "
+"and free wireless internet. Every window is opened to outside, with views to "
+"the property. Some of the rooms have a balcony with views of the gardens and "
+"the cornfield."
+msgstr ""
+"In bathrooms, there are showers with a lot of pressure and plenty of hot "
+"water and amenities. Every room has an individual air conditioning system "
+"and free wireless internet. Every window is opened to outside, with views to "
+"the property. Some of the rooms have a balcony with views of the gardens and "
+"the cornfield."
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Jacuzzi"
+msgstr "Jacuzzi"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid ""
+"Our rooms have been designed individually, with space, simplicity an comfort."
+msgstr ""
+"Os nosso quartos foram concebidos individualmente com espaço, simplicidade e "
+"conforto."
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Overview"
+msgstr "Overview"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Please enter your E-mail"
+msgstr "Forneça o seu E-mail"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Room Details"
+msgstr "Room Details"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Room Type"
+msgstr "Tipo de Quarto"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Save"
+msgstr "Confirmar"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Select a room"
+msgstr "Seleccione o Quarto"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Single room"
+msgstr "Quaro Single"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Table overview"
+msgstr "Table overview"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Tradition and modernity"
+msgstr "Tradição e Modernidade"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Twin Bedroom"
+msgstr "Quarto Twin"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid ""
+"We offer an eclectic and modern style, preserving the connection between "
+"traditional and rural stuff. Our rooms have been designed individually, with "
+"space, simplicity an comfort. Here, guests can ennjoy the excelent quality "
+"of the beds, comfortable pillows, good illumination for reading, nice "
+"decoration."
+msgstr ""
+"We offer an eclectic and modern style, preserving the connection between "
+"traditional and rural stuff. Our rooms have been designed individually, with "
+"space, simplicity an comfort. Here, guests can ennjoy the excelent quality "
+"of the beds, comfortable pillows, good illumination for reading, nice "
+"decoration."
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "a night"
+msgstr "a noite"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Check-In is from 14:00"
+msgstr "Check-In a partir das 14:00"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Check-out is from 12:00"
+msgstr "Check-out até as 12:00"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Select the desired room typology."
+msgstr "Seleccione a tipologia de quarto pretendida."
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "+12 years"
+msgstr "+12 anos"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "0 till 12 years"
+msgstr "0 até 12 anos"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Room Details"
+msgstr "Detalhes do quarto"
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Table overview"
+msgstr ""
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Overview"
+msgstr ""
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Facilities"
+msgstr ""
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "Extra"
+msgstr ""
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid "READ MORE"
+msgstr ""
+
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
+msgid ""
+msgstr ""

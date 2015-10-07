@@ -4,110 +4,6 @@
 */
 /* Basic Styles 
 -------------------------------------------------- */
-	/* Headings */
-	/* Fonts */
-	/* Margins */
-	/* Form */
-	/* Buttons */
-	/* Image Hover Zoom */
-	/* Grid */
-	
-/* Top Header
--------------------------------------------------- */
-	/* Items */
-	/* Language dropdown */
-	/* Social icons */
-	/* Retina logo */
-
-/* Header
--------------------------------------------------- */
-	/* Base Navigation */
-	/* Logo */
-	/* Navbar */
-	/* Dropdown */
-	/* Shrink Navigation */
-	/* Nav Yamm3 Megamenu */
-
-/* Reservation Form
--------------------------------------------------- */
-	/* Vertical */
-	/* Price */
-	/* Horizontal */
-	/* Icons */
-	/* Button */
-	/* Guests */
-	/* Datepicker*/
-	/* Error Message */
-
-/* Rooms
--------------------------------------------------- */
-	/* Room Thumbnails */
-	/* Room List */
-
-/* USP's
--------------------------------------------------- */
-	/* Circle */
-	/* Icon */
-
-/* Blog
--------------------------------------------------- */
-	/* Article */
-	/* Meta */
-	/* Content */
-	/* Blog Author */
-	/* Blog Comments */
-
-/* Aside
--------------------------------------------------- */
-	/* Headings */
-	/* Widgets */
-	/* Widget: Tags */
-	/* Widget: List Styles */
-	/* Widget: Latest News */
-
-
-/* Pages
--------------------------------------------------- */
-	/* 404 Error page*/
-	/* Fontawesome Page */
-	/* Gallery */
-
-/* Bootstrap Components
--------------------------------------------------- */
-	/* Image styles */
-	/* Nav Tabs */
-	/* Nav Pills */
-	/* Call To Action */
-	/* Breadcrumb */
-	/* Popover */
-	/* Table */
-	/* Panel */
-	/* Pagination */
-	/* Badge */
-	/* Blockquote */
-	/* Alerts */
-
-/* Footer
--------------------------------------------------- */
-	/* Base */
-	/* Footer Bottom */
-
-/* Plugin Styles
--------------------------------------------------- */
-	/* Datepicker */
-	/* Sticky */
-	/* Owl Gallery */
-	/* Owl Reviews */
-	/* Owl Slider */
-	/* Parallax */
-	/* Revolution Slider */
-	/* Waypoints */
-	/* Go-Top Button */
-	/* Isotope */
-	/* Gmap */
-
-/* Basic Styles 
--------------------------------------------------- */
 
 
 /* Reservation Form
@@ -200,6 +96,10 @@
 .form-inline .form-control{
 	width: 100%;
 }
+
+.form-summary {
+	border:none;
+}
 #reservation-form .reservation-horizontal .col-sm-1, #reservation-form .reservation-horizontal .col-sm-2, #reservation-form .reservation-horizontal .col-sm-3 {
 	padding-left: 10px;
 	padding-right: 10px;
@@ -282,6 +182,45 @@
 #error{
 	display: none;
 }
+
+form #card-number {
+  background-image: url(../img/cards.png), url(../img/cards.png);
+  background-position: 2px -121px, 260px -61px;
+  background-size: 120px 361px, 120px 361px;
+  background-repeat: no-repeat;
+  padding-left: 54px;
+}
+form #card-number.visa {
+  background-position: 2px -163px, 260px -61px;
+}
+form #card-number.form-control.visa_electron {
+  background-position: 2px -205px, 260px -61px;
+}
+form #card-number.form-control.mastercard {
+  background-position: 2px -247px, 260px -61px;
+}
+form #card-number.form-control.maestro {
+  background-position: 2px -289px, 260px -61px;
+}
+form #card-number.form-control.discover {
+  background-position: 2px -331px, 260px -61px;
+}
+form #card-number.form-control.valid.visa {
+  background-position: 2px -163px, 260px -87px;
+}
+form #card-number.form-control.valid.visa_electron {
+  background-position: 2px -205px, 260px -87px;
+}
+form #card-number.form-control.valid.mastercard {
+  background-position: 2px -247px, 260px -87px;
+}
+form #card-number.form-control.valid.maestro {
+  background-position: 2px -289px, 260px -87px;
+}
+form #card-number.form-control.valid.discover {
+  background-position: 2px -331px, 260px -87px;
+}
+
 /* Rooms
 -------------------------------------------------- */
 /* Room Thumbnails */

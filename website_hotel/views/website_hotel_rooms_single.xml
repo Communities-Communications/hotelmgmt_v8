@@ -10,7 +10,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="text-left">THE FARM</h1>
+              <h1 class="text-left">ROOMS</h1>
             </div>
           </div>
         </div>
@@ -19,7 +19,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="text-left" style="color: rgb(85, 75, 59);">ROOMS</h1>
+              <h1 class="text-left" style="color: rgb(85, 75, 59);">SINGLE ROOM DETAILS</h1>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@
                     </li>
                   </ul>
                 </div>
-		        <form role="form" action="/hotel/reservations" method="post" class="reservation-vertical clearfix" name="reservationform" id="reservationform" enctype="multipart/form-data">
+		        <form role="form" action="/hotel/reservations"  onsubmit="return validateForm()" method="post" class="reservation-vertical clearfix" name="reservationform" id="reservationform" enctype="multipart/form-data">
 		            <div class="tab-content" style="padding: 0px;">
 		                <div id="message"></div>
 		                <div class="tab-pane active" role="tabpanel" id="step1">
@@ -111,7 +111,7 @@
 		                    </div>
 		                    <div class="form-group">
 		                        <label for="name">Room Type</label>
-		                        <select id="room-requirements" name="name" class="form-control" t-attf-value="#{name or ''}">
+		                        <select id="name" name="name" class="form-control" t-attf-value="#{name or ''}">
 		                            <option value="5"> Single room </option>
 		                        </select>
 		                    </div>
@@ -122,7 +122,7 @@
 		                                <i class="fa fa-info-circle fa-lg"/>
 		                            </div>
 		                            <i class="fa fa-calendar infield"/>
-		                            <input class="form-control" id="checkin" name="checkin" placeholder="Check-in" value="" type="text" required="True" t-attf-value="#{checkin or ''}"/>
+		                            <input class="form-control" id="checkin" name="checkin" placeholder="Check-in" value="" type="text" t-attf-value="#{checkin or ''}"/>
 		                        </div>
 		                        <div t-attf-class="form-group #{error and 'checkout' in error and 'has-error' or ''}">
 		                            <label for="checkout">Check-out</label>
@@ -130,7 +130,7 @@
 		                                <i class="fa fa-info-circle fa-lg"/>
 		                            </div>
 		                            <i class="fa fa-calendar infield"/>
-		                            <input class="form-control" id="checkout" name="checkout" placeholder="Check-out" value="" type="text" required="True" t-attf-value="#{checkout or ''}"/>
+		                            <input class="form-control" id="checkout" name="checkout" placeholder="Check-out" value="" type="text" t-attf-value="#{checkout or ''}"/>
 		                        </div>
 		                    </span>
 		                    <div class="form-group">
@@ -173,25 +173,23 @@
 		                        <span>Personal data</span>
 		                    </h2>
 		                    <div t-attf-class="form-group #{error and 'contact_name' in error and 'has-error' or ''}">
-		                        <input type="text" class="form-control" name="contact_name" placeholder="Your Name" required="True" t-attf-value="#{contact_name or ''}"/>
+		                        <input type="text" class="form-control" id="contact_name" name="contact_name" placeholder="Your Name" t-attf-value="#{contact_name or ''}"/>
 		                    </div>
 		                    <div t-attf-class="form-group #{error and 'email_from' in error and 'has-error' or ''}">
-		                        <input type="email" class="form-control" name="email_from" placeholder="Email" required="True" t-attf-value="#{email_from or ''}"/>
+		                        <input type="email" class="form-control" id="email_from" name="email_from" placeholder="Email" t-attf-value="#{email_from or ''}"/>
 		                    </div>
 		                    <div t-attf-class="form-group #{error and 'phone' in error and 'has-error' or ''}">
-		                        <input type="text" class="form-control" name="phone" placeholder="Phone Number (+351) 910 999 999" required="True" t-attf-value="#{phone or ''}"/>
+		                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number (+351) 910 999 999" t-attf-value="#{phone or ''}"/>
 		                    </div>
 		                    <div class="form-group">
-		                        <input type="text" class="form-control" name="street" placeholder="Address" required="True" t-attf-value="#{street or ''}"/>
+		                        <input type="text" class="form-control" id="street" name="street" placeholder="Address" t-attf-value="#{street or ''}"/>
 		                    </div>
+				    <div class="form-group">
+				        <input type="text" class="form-control" style="width:33%; display:inline;" id="zip" name="zip" placeholder="Zip"/>
+				        <input type="text" class="form-control" style="width:65%; display:inline;" id="city" name="city" placeholder="City" t-attf-value="#{city or ''}"/>
+				    </div>
 		                    <div class="form-group">
-		                        <input type="text" class="form-control" name="zip" placeholder="Zip" required="True"/>
-		                    </div>
-		                    <div class="form-group">
-		                        <input type="text" class="form-control" name="city" placeholder="City" required="True" t-attf-value="#{city or ''}"/>
-		                    </div>
-		                    <div class="form-group">
-		                        <select id="country_id" name="country_id" class="form-control" required="True" t-attf-value="#{country_id or ''}">
+		                        <select id="country_id" name="country_id" class="form-control" t-attf-value="#{country_id or ''}">
 		                            <option value="">Choose your country</option>
 		                            <option value="1">Andorra, Principality of</option>
 		                            <option value="2">United Arab Emirates</option>
@@ -449,7 +447,7 @@
 		                        </select>
 		                    </div>
 		                    <div class="form-group">
-		                        <input type="text" class="form-control" name="vat" placeholder="VAT Id Number (PT999999990)" required="True" t-attf-value="#{vat or ''}"/>
+		                        <input type="text" class="form-control" id="vat" name="vat" placeholder="VAT Id Number (PT999999990)" t-attf-value="#{vat or ''}"/>
 		                    </div>
 		                    <span class="col-md-4" style="padding-left: 0px;">
 		                        <button type="button" class="btn btn-default btn-block prev-step">Previous</button>
@@ -464,19 +462,19 @@
 		                    </h2>
 		                    <fieldset>
 		                        <div class="form-group">
-		                            <input type="text" class="form-control" name="cardname" id="card-holder-name" required="True" placeholder="Card Holder's Name"/>
+		                            <input type="text" class="form-control" name="cardname" id="cardname" placeholder="Card Holder's Name"/>
 		                        </div>
 		                        <div class="form-group">
-		                            <input type="text" class="form-control" name="card-number" id="card-number" required="True" placeholder="Credit Card Number"/>
+		                            <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Credit Card Number"/>
 		                        </div>
 		                        <div class="form-group">
-		                            <input type="text" class="form-control" name="cvv" id="cvv" required="True" placeholder="Security Code (CVV)"/>
+		                            <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code (CVV)"/>
 		                        </div>
 		                        <div class="form-group">
 		                            <label for="expiry-month">Expiration Date</label>
 		                            <div class="row">
 		                                <div class="col-xs-3 col-sm-6">
-		                                    <select class="form-control col-sm-2" name="expiry-month" required="True" id="expiry-month">
+		                                    <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
 		                                        <option>Month</option>
 		                                        <option value="01">Jan (01)</option>
 		                                        <option value="02">Feb (02)</option>
@@ -493,9 +491,7 @@
 		                                    </select>
 		                                </div>
 		                                <div class="col-xs-3 col-sm-6">
-		                                    <select class="form-control" name="expiry-year" required="True" >
-		                                        <option value="13">2013</option>
-		                                        <option value="14">2014</option>
+		                                    <select class="form-control" name="expiry-year" id="expiry-year">
 		                                        <option value="15">2015</option>
 		                                        <option value="16">2016</option>
 		                                        <option value="17">2017</option>
@@ -511,10 +507,10 @@
 		                        </div>
 		                    </fieldset>
 		                    <label>
-		                        <input class="terms-checkbox" type="checkbox"/> I understand and agree with the 
+		                        <input class="terms-checkbox" id="terms" type="checkbox"/> I understand and agree with the 
 		                                    
 		                                    
-		                        <a class="js-terms-message" data-toggle="modal" href="#primary" required="True">terms and conditions</a>
+		                        <a class="js-terms-message" data-toggle="modal" href="#primary">terms and conditions</a>
 		                    </label>
 		                    <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade text-left" id="primary" role="dialog" tabindex="-1">
 		                        <div class="modal-dialog">
@@ -580,6 +576,12 @@
         <div class="oe_structure"/>
       </div>
     </t>
+</template>
+
+<template id="creditCardValidator_single_room" name="credit Card Validator" inherit_id="website.rooms-single">
+    <xpath expr="." position="inside">
+        <script type="text/javascript" src="/website_hotel/static/src/js/jquery.creditCardValidator.js"/>
+    </xpath>
 </template>
 
 </data>
