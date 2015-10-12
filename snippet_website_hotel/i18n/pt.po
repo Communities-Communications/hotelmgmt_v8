@@ -3,12 +3,17 @@
 # 	* snippet_website_hotel
 # João Figueira <jjnf@communities.pt>, 2015.
 #
+#. module: snippet_website_hotel
+#: view:website:website.snippets
+#: view:website:reservation_horizontal_snippet_id
+#: view:website:reservation_rooms_snippet_id
+#: view:website:reservation_room_details_snippet_id
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-01 14:47+0000\n"
-"PO-Revision-Date: 2015-09-01 16:30+0100\n"
+"PO-Revision-Date: 2015-10-12 12:20+0100\n"
 "Last-Translator: João Figueira <jjnf@communities.pt>\n"
 "Language-Team: Português <cc@communities.pt>\n"
 "MIME-Version: 1.0\n"
@@ -183,7 +188,7 @@ msgstr "Extra"
 #: view:website:reservation_rooms_snippet_id
 #: view:website:reservation_room_details_snippet_id
 msgid "Facilities"
-msgstr "Facilities"
+msgstr "Instalações"
 
 #. module: snippet_website_hotel
 #: view:website:website.snippets
@@ -290,7 +295,7 @@ msgstr ""
 #: view:website:reservation_rooms_snippet_id
 #: view:website:reservation_room_details_snippet_id
 msgid "Overview"
-msgstr "Overview"
+msgstr "Geral"
 
 #. module: snippet_website_hotel
 #: view:website:website.snippets
@@ -306,7 +311,7 @@ msgstr "Forneça o seu E-mail"
 #: view:website:reservation_rooms_snippet_id
 #: view:website:reservation_room_details_snippet_id
 msgid "Room Details"
-msgstr "Room Details"
+msgstr "Detalhes do Quarto"
 
 #. module: snippet_website_hotel
 #: view:website:website.snippets
@@ -346,7 +351,7 @@ msgstr "Quaro Single"
 #: view:website:reservation_rooms_snippet_id
 #: view:website:reservation_room_details_snippet_id
 msgid "Table overview"
-msgstr "Table overview"
+msgstr "Descrição Geral"
 
 #. module: snippet_website_hotel
 #: view:website:website.snippets
@@ -476,7 +481,7 @@ msgstr ""
 #: view:website:reservation_rooms_snippet_id
 #: view:website:reservation_room_details_snippet_id
 msgid "READ MORE"
-msgstr ""
+msgstr "VÊR MAIS"
 
 #. module: snippet_website_hotel
 #: view:website:website.snippets
